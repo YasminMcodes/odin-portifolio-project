@@ -52,6 +52,7 @@ img {
   position: relative;
   background-color: transparent;
   padding: 4rem 1.5rem 6rem;
+  overflow: visible;
 }
 .hero::before {
   content: "";
@@ -63,16 +64,14 @@ img {
 }
 
 .hero-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 3rem;
-  position: relative;
-  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
 }
 
 .hero-image {
   position: relative;
-  max-width: 350px;
+  max-width: 650px;
 }
 .hero-image img {
   width: 100%;
@@ -88,7 +87,6 @@ img {
 .hero-content {
   background-color: white;
   padding: 2rem;
-  border-radius: 4px;
   max-width: 500px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.8);
 }
@@ -120,10 +118,10 @@ img {
   text-align: center;
 }
 .project-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
 }
 .project-content {
   padding: 1.5rem;
@@ -134,21 +132,21 @@ img {
   margin: 0.5rem 0 1.2rem;
 }
 .project-content h3 {
-    font-size: 1.1rem;
-    margin: 0;
+  font-size: 1.1rem;
+  margin: 0;
 }
 .project-links {
   display: flex;
   gap: 0.75rem;
 }
 .project-links img {
-    width: 18px;
-    height: 18px;
-    opacity: 0.7;
-    transition: opacity 0.2s ease;
+  width: 18px;
+  height: 18px;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
 }
 .project-links a:hover img {
-    opacity: 1;
+  opacity: 1;
 }
 
 .project-links a {
@@ -167,47 +165,47 @@ img {
   align-items: center;
 }
 .contact-info {
-    max-width: 420px;
+  max-width: 420px;
 }
 .contact-intro {
-    margin: 1rem 0 1.5rem;
+  margin: 1rem 0 1.5rem;
 }
 .contact-address {
-    margin-bottom: 1.5rem;
-    line-height: 1.5;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
 }
 .contact-list {
-    list-style: none;
-    padding: 0;
-    margin-bottom: 1.5rem;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 1.5rem;
 }
 .contact-list li {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-bottom:0.75rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
 }
 .contact-list img {
-    width: 18px;
-    height: 18px;
+  width: 18px;
+  height: 18px;
 }
 .contact-socials {
-    display: flex;
-    gap: 1rem;
+  display: flex;
+  gap: 1rem;
 }
 .contact-socials img {
-    width: 22px;
-    height: 22px;
-    opacity: 0.8;
-    transition: opacity 0.2s ease;
+  width: 22px;
+  height: 22px;
+  opacity: 0.8;
+  transition: opacity 0.2s ease;
 }
 .contact-socials a:hover img {
-    opacity: 1;
+  opacity: 1;
 }
-.contact-image img{
-    width: 100%;
-    max-width:600px;
-    border-radius: 4px;
+.contact-image img {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 4px;
 }
 
 .social-links {
@@ -227,7 +225,7 @@ img {
   opacity: 1;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .hero-wrapper {
     flex-direction: column;
     align-items: flex-start;
@@ -257,5 +255,33 @@ img {
   }
   section {
     padding: 2.5rem 1rem;
+  }
+  .hero-wrapper {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}
+
+@media (min-width: 600px) and (max-width: 1024px) {
+  .hero {
+    overflow: visible;
+  }
+  .hero-wrapper {
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+  }
+  .hero-image img {
+    position: relative;
+    width: 100%;
+    max-width: 500px;
+    z-index: 2;
+  }
+  .hero-content {
+    position: relative;
+    max-width: 420px;
+    margin-left: -3rem;
+    margin-top: 3rem;
+    z-index: 1;
+    padding: 3rem;
   }
 }
